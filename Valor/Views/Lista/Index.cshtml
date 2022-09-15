@@ -1,0 +1,60 @@
+﻿@{
+    ViewData["Title"] = "Lista de ações";
+}
+
+<div class="text-center">
+
+    <h1 class="display-4">LISTAGEM DE ATIVOS</h1>
+
+    <table class="table table-hover">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col" class="bg-success">TICKER</th>
+                <th scope="col" class="bg-success">EMPRESA</th>
+                <th scope="col" class="bg-success">SETOR</th>
+                <th scope="col" class="bg-success">VARIAÇÃO</th>
+                <th scope="col" class="bg-success">FECHAMENTO</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var customer in ViewBag.Teste.Stocks)
+            {
+            <tr>
+                <th scope="row">
+                    <!-- Enviar o ticker clicado para a pagina de informações do ticker -->
+                    @using (Html.BeginForm("Index", "Stock", FormMethod.Post))
+                    {
+                        <input type="hidden" id="teste" name="teste" value="@customer.Stock">
+                        <input type="submit" value="@customer.Stock" style="border: none; background-color: transparent; resize: none; outline: none; color: green">
+                    }
+
+                </th>
+                <td>@customer.Name</td>
+                <td>@customer.Sector</td>
+                <!-- Inicio pernalização da cor de variação -->
+                @{
+                    var valor = customer.Change.ToString("0.00");
+
+                }
+                @if (customer.Change < 0)
+                {
+                    <td style="color: red">@valor</td>
+                }
+                else if (customer.Change > 0)
+                {
+                    <td style="color: green">@valor</td>
+                }
+                else
+                {
+                    <td style="color: grey">@valor</td>
+                }
+                <!-- Fim pernalização da cor de variação -->
+                <td>@customer.Close</td>
+            </tr>
+
+            }
+        </tbody>
+    </table>
+</div>
+
+

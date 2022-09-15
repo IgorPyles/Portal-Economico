@@ -1,0 +1,186 @@
+﻿@{
+    ViewData["Title"] = "Ações";
+}
+
+<link rel="stylesheet" href="~/css/Stock.css" />
+<div class="container text-center">
+    <div class="row">
+        <div class="col rounded" style="background-color: #ffffff">
+            <div class="row align-items-end">
+                <div class="col-lg-2 p-3 d-flex col-6 col-sm-6">
+                    @foreach (var customer in ViewBag.Imagem.Stocks)
+                    {
+                        string letra = customer.Stock;
+                        string letra2 = ViewBag.Teste.symbol;
+                        if (letra == letra2)
+                        {
+                    <img src="@customer.Logo" height="100" />
+                        }
+
+                    }
+                </div>
+                <div class="col-lg-2 p-3 d-flex col-6 col-sm-6" style="font-family: Tahoma, Verdana, Segoe, sans-serif; font-size: 250%">
+                    <p>@ViewBag.Teste.symbol</p>
+                </div>
+                <div class="col-lg-6 p-3 d-flex" style="font-family: Tahoma, Verdana, Segoe, sans-serif; font-size: 190%">
+                    <p>@ViewBag.Teste.name</p>
+                </div>
+                <div class="col-lg-2 p-3 d-flex text-center" style="font-family: Tahoma, Verdana, Segoe, sans-serif; font-size: 190%">
+                    <p>R$ @ViewBag.Teste.lastPrice</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div class="row align-items-end">
+                        <div class="col-lg-2 p-3 d-flex col-6 col-sm-6">
+                            <div class="row">
+                                <div class="col-12">
+                                    <p style="font-family: Tahoma, Verdana, Segoe, sans-serif; font-size: 150%">R$ @ViewBag.Teste.priceOpen</p>
+                                </div>
+                                <div class="col-12">
+                                    <p class="texto tam100">Abertura</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-2 p-3 d-flex col-6 col-sm-6">
+                            <div class="row">
+                                <div class="col-12">
+                                    <p style="font-family: Tahoma, Verdana, Segoe, sans-serif; font-size: 150%">R$ @ViewBag.Teste.closingPrice</p>
+                                </div>
+                                <div class="col-12">
+                                    <p class="texto tam100">Fechamento</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-2 p-3 d-flex col-6 col-sm-6">
+                            <div class="row">
+                                <div class="col-12">
+                                    <p style="font-family: Tahoma, Verdana, Segoe, sans-serif; font-size: 150%">R$ @ViewBag.Teste.lastYearLow</p>
+                                </div>
+                                <div class="col-12">
+                                    <p class="texto tam100">Mínima no último ano</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 p-3 d-flex col-6 col-sm-6">
+                            <div class="row">
+                                <div class="col-12">
+                                    <p style="font-family: Tahoma, Verdana, Segoe, sans-serif; font-size: 150%">R$ @ViewBag.Teste.lastYearHigh</p>
+                                </div>
+                                <div class="col-12">
+                                    <p class="texto tam100">Máxima no último ano</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br />
+    <br />
+    <div class="d-inline p-2 display-4" style="font-family: Tahoma, Verdana, Segoe, sans-serif">INDICADORES DE</div>
+    <div class="d-inline p-2 display-4" style="font-family: Tahoma, Verdana, Segoe, sans-serif; color: #008000">@ViewBag.Teste.symbol</div>
+    <br />
+    <br />
+     <div class="row">
+        <!-- Seção de valuation -->
+        <div class="col-lg-6 p-3 d-flex col-12 col-sm-12" >
+            <div class="col-12 rounded" style="background-color: #ffffff">
+                <div class="row">
+                    <div class="col-12">
+                        <p style="font-family: Tahoma, Verdana, Segoe, sans-serif; font-size: 100%" id="colorido">INDICADORES</p>
+                    </div>
+                    <div class="col-6">
+                        <p style="font-family: Tahoma, Verdana, Segoe, sans-serif; font-size: 100%">ROIC</p>
+                        <p style="font-family: Tahoma, Verdana, Segoe, sans-serif; font-size: 100%">R$ @ViewBag.Indica.returnOnInvestedCapital.value</p>
+                    </div>
+                    <div class="col-6">
+                        <p>ROE</p>
+                        <p>R$ @ViewBag.Indica.returnOnEquity.value</p>
+                    </div>
+                    <hr />
+                    <div class="col-6">
+                        <p>ROA</p>
+                        <p>R$ @ViewBag.Indica.returnOnAssets.value</p>
+                    </div>
+                    <div class="col-6">
+                        <p>TESTE</p>
+                        <p>R$ @ViewBag.Teste.lastPrice</p>
+                    </div>
+                    <div class="col-6">
+                        <p>TESTE</p>
+                        <p>R$ @ViewBag.Teste.lastPrice</p>
+                    </div>
+                    <div class="col-6">
+                        <p>TESTE</p>
+                        <p>R$ @ViewBag.Teste.lastPrice</p>
+                    </div>
+                    <div class="col-6">
+                        <p>TESTE</p>
+                        <p>R$ @ViewBag.Teste.lastPrice</p>
+                    </div>
+                    <div class="col-6">
+                        <p>TESTE</p>
+                        <p>R$ @ViewBag.Teste.lastPrice</p>
+                    </div>
+                    <div class="col-6">
+                        <p>TESTE</p>
+                        <p>R$ @ViewBag.Teste.lastPrice</p>
+                    </div>
+                    <div class="col-6">
+                        <p>TESTE</p>
+                        <p>R$ @ViewBag.Teste.lastPrice</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Seção de indicadores -->
+       <div class="col-lg-6 p-3 d-flex col-12 col-sm-12" >
+            <div class="col-12 rounded" style="background-color: #ffffff">
+                <div class="row">
+                    <div class="col-6">
+                        <p>TESTE</p>
+                        <p>R$ @ViewBag.Teste.lastPrice</p>
+                    </div>
+                    <div class="col-6">
+                        <p>TESTE</p>
+                        <p>R$ @ViewBag.Teste.lastPrice</p>
+                    </div>
+                    <div class="col-6">
+                        <p>TESTE</p>
+                        <p>R$ @ViewBag.Teste.lastPrice</p>
+                    </div>
+                    <div class="col-6">
+                        <p>TESTE</p>
+                        <p>R$ @ViewBag.Teste.lastPrice</p>
+                    </div>
+                    <div class="col-6">
+                        <p>TESTE</p>
+                        <p>R$ @ViewBag.Teste.lastPrice</p>
+                    </div>
+                    <div class="col-6">
+                        <p>TESTE</p>
+                        <p>R$ @ViewBag.Teste.lastPrice</p>
+                    </div>
+                    <div class="col-6">
+                        <p>TESTE</p>
+                        <p>R$ @ViewBag.Teste.lastPrice</p>
+                    </div>
+                    <div class="col-6">
+                        <p>TESTE</p>
+                        <p>R$ @ViewBag.Teste.lastPrice</p>
+                    </div>
+                    <div class="col-6">
+                        <p>TESTE</p>
+                        <p>R$ @ViewBag.Teste.lastPrice</p>
+                    </div>
+                    <div class="col-6">
+                        <p>TESTE</p>
+                        <p>R$ @ViewBag.Teste.lastPrice</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

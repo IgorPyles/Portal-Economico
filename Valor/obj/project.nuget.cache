@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "cU+tzehGTB67NlnVeahRLr+tJnRzirMqlr6oDHlkyhJaZcsQ08qsbnOvmvVqe5jzHHakeRVzwtVVWcNj9bC8HQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\igor\\Desktop\\Valor\\Valor\\Valor.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\igor\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
+    "C:\\Users\\igor\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\3.1.24\\microsoft.netcore.app.host.win-x64.3.1.24.nupkg.sha512"
+  ],
+  "logs": []
+}
